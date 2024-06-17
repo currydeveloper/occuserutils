@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+  <SPRight displayName="occuserutilsRight" name="occuserutilsRight"/>
+  <SPRight displayName="userutilsRESTAllow" name="userutilsRESTAllow"/>
+  <SPRight displayName="currentuser" name="currentuser"/>
+  <Capability displayName="OCC UserUtils" name="OCC UserUtils">
+    <RightRefs>
+      <Reference class="sailpoint.object.SPRight" name="occuserutilsRight"/>
+      <Reference class="sailpoint.object.SPRight" name="userutilsRESTAllow"/>
+      <Reference class="sailpoint.object.SPRight" name="currentuser"/>
+    </RightRefs>
+  </Capability>
+</sailpoint>
