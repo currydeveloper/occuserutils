@@ -22,7 +22,7 @@
     <!-- the run configuration of build.xml -->
   </target>
 <target name="npm-build">
-    <exec dir="src-ui/" executable="cmd.exe" output="npm-build.txt">
+    <exec dir="ngui/" executable="cmd.exe" output="npm-build.txt">
      <arg line="/c npm run build"/>
     </exec>
 </target>
@@ -78,6 +78,7 @@
 
   <target name="package" depends="compile,generateDTD,npm-build" description="Output zip file overlay to build/dist dir">
 	    <mkdir dir="${overlay}/jars" />
+          <buildnumber file="build.num"/>
 	    <jar destfile="${overlay}/jars/${pluginname}.jar">
 	      <fileset dir="build/classes">
 	        <include name="**/**" />
@@ -102,7 +103,7 @@
 	      </fileset>
 	    </copy>
 	  	<copy todir="${overlay}/ui/js">
-	      <fileset dir="src-ui/dist/src-ui">
+	      <fileset dir="ngui/dist/ngui/browser">
 	        <include name="*.js"/>
 	      </fileset>
 	  	  <fileset dir="web/ui/js">
@@ -110,7 +111,7 @@
 	      </fileset>
 	    </copy>
 	  	<copy todir="${overlay}/ui/css">
-	      <fileset dir="src-ui/dist/src-ui">
+	      <fileset dir="ngui/dist/ngui/browser">
 	        <include name="*.css"/>
 	      </fileset>
 	    </copy>
@@ -118,9 +119,9 @@
 	      <xmlcatalog>
 	        <dtd publicId="sailpoint.dtd" location="${dtd}" />
 	      </xmlcatalog>
-	      <replace path="//Plugin/@version" withText="${version}" />
+      <replace path="//Plugin/@version" withText="${version}.${build.number}" />
 	    </xmltask>
-	    <zip basedir="${overlay}" destfile="build/dist/${pluginname}.${version}.zip" />
+    <zip basedir="${overlay}" destfile="build/dist/${pluginname}.${version}.${build.number}.zip" />
 	  </target>
   
 </project>

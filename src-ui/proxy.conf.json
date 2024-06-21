@@ -1,0 +1,8 @@
+{
+    "/identityiq":{
+        "target":"http://192.168.206.132:8080",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+}
