@@ -22,7 +22,7 @@
     <!-- the run configuration of build.xml -->
   </target>
 <target name="npm-build">
-    <exec dir="ngui/" executable="cmd.exe" output="npm-build.txt">
+    <exec dir="src-ui/" executable="cmd.exe" output="npm-build.txt">
      <arg line="/c npm run build"/>
     </exec>
 </target>
@@ -103,7 +103,7 @@
 	      </fileset>
 	    </copy>
 	  	<copy todir="${overlay}/ui/js">
-	      <fileset dir="ngui/dist/ngui/browser">
+	      <fileset dir="src-ui/dist/src-ui">
 	        <include name="*.js"/>
 	      </fileset>
 	  	  <fileset dir="web/ui/js">
@@ -111,7 +111,7 @@
 	      </fileset>
 	    </copy>
 	  	<copy todir="${overlay}/ui/css">
-	      <fileset dir="ngui/dist/ngui/browser">
+	      <fileset dir="src-ui/dist/src-ui">
 	        <include name="*.css"/>
 	      </fileset>
 	    </copy>

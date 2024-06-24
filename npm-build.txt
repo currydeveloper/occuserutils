@@ -1,17 +1,25 @@
 
-> ngui@0.0.0 build
+> src-ui@0.0.0 build
 > ng build --output-hashing=none
 
-- Building...
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
 
-Initial chunk files | Names         |  Raw size | Estimated transfer size
-main.js             | main          | 194.68 kB |                53.11 kB
-polyfills.js        | polyfills     |  33.43 kB |                10.87 kB
-styles.css          | styles        |   0 bytes |                 0 bytes
+Initial Chunk Files | Names         |  Raw Size | Estimated Transfer Size
+main.js             | main          | 450.58 kB |               106.72 kB
+styles.css          | styles        | 106.18 kB |                 9.52 kB
+polyfills.js        | polyfills     |  33.08 kB |                10.69 kB
+runtime.js          | runtime       | 890 bytes |               508 bytes
 
-                    | Initial total | 228.11 kB |                63.98 kB
+| Initial Total | 590.71 kB |               127.43 kB
 
-Output location: e:\Dev\Angular\occuserutils\ngui\dist\ngui
+Build at: 2024-06-24T23:18:49.215Z - Hash: 5091a28fee282671 - Time: 7138ms
+✔ Index html generation complete.
 
-Application bundle generation complete. [2.744 seconds]
+Warning: bundle initial exceeded maximum budget. Budget 500.00 kB was not met by 90.71 kB with a total of 590.71 kB.
+
 

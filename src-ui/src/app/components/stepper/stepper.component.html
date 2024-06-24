@@ -1,22 +1,46 @@
-<mat-stepper orientation="vertical">
-  <mat-step>
-    <ng-template matStepLabel>Step 1</ng-template>
-    <ng-template matStepContent>
-      <p>This content was rendered lazily</p>
+<mat-stepper>
+  <mat-step label="Step 1" state="phone" editable="false">
+    <p>Put down your phones.</p>
+  </mat-step>
+  <mat-step label="Step 2" state="chat">
+    <p>Socialize with each other.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>
-    </ng-template>
+    </div>
   </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Step 2</ng-template>
-    <ng-template matStepContent>
-      <p>This content was also rendered lazily</p>
-      <button mat-button matStepperPrevious>Back</button>cv
-      <button mat-button matStepperNext>Next</button>
-    </ng-template>
+  <mat-step label="Step 3">
+    <p>You're welcome.</p>
   </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Step 3</ng-template>
-    <p>This content was rendered eagerly</p>
-    <button mat-button matStepperPrevious>Back</button>
-  </mat-step>
+
+  <!-- Icon overrides. -->
+  <ng-template matStepperIcon="phone">
+    <mat-icon>call_end</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="chat">
+    <mat-icon>forum</mat-icon>
+  </ng-template>
 </mat-stepper>
+<div class="shipping-progress-tracker">
+  <mat-horizontal-stepper [selectedIndex]="currentStep" linear>
+    <mat-step
+      label="Order Placed"
+      editable="false"
+      [completed]="currentStep > 0"
+    >
+      <ng-template matStepLabel>Order Placed</ng-template>
+    </mat-step>
+    <mat-step label="Processing" [completed]="currentStep > 1">
+      <ng-template matStepLabel>Processing</ng-template>
+    </mat-step>
+    <mat-step label="Shipped" [completed]="currentStep > 2">
+      <ng-template matStepLabel>Shipped</ng-template>
+    </mat-step>
+    <mat-step label="Out for Delivery" [completed]="currentStep > 3">
+      <ng-template matStepLabel>Out for Delivery</ng-template>
+    </mat-step>
+    <mat-step label="Delivered" [completed]="currentStep > 4">
+      <ng-template matStepLabel>Delivered</ng-template>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
